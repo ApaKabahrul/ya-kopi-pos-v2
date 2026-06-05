@@ -1,0 +1,755 @@
+{
+  "users": [
+    {
+      "id": "usr_owner",
+      "name": "Owner Ya Kopi",
+      "username": "owner",
+      "email": "owner@yakopi.com",
+      "role": "owner",
+      "status": "active",
+      "created_at": "2026-06-05T10:38:50.935Z",
+      "updated_at": "2026-06-05T10:38:50.937Z"
+    },
+    {
+      "id": "usr_cashier",
+      "name": "Cashier Ya Kopi",
+      "username": "cashier",
+      "email": "cashier@yakopi.com",
+      "role": "cashier",
+      "status": "active",
+      "created_at": "2026-06-05T10:38:50.937Z",
+      "updated_at": "2026-06-05T10:38:50.937Z"
+    }
+  ],
+  "user_passwords": {
+    "usr_owner": "1adfbab1eed44d2764e4799b40ec107d336ba5458d5e26efa048b8d233337999",
+    "usr_cashier": "1adfbab1eed44d2764e4799b40ec107d336ba5458d5e26efa048b8d233337999"
+  },
+  "categories": [
+    {
+      "id": "cat_coffee",
+      "name": "Coffee",
+      "description": "Minuman espresso-based dan manual brew",
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "cat_noncoffee",
+      "name": "Non Coffee",
+      "description": "Minuman manis non kafein",
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "cat_tea",
+      "name": "Tea",
+      "description": "Teh aromatik segar hangat/dingin",
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "cat_snack",
+      "name": "Snack",
+      "description": "Camilan dan pastries pendamping kopi",
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "cat_addons",
+      "name": "Add-ons",
+      "description": "Ekstra sirup, shot espresso, susu khusus",
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod_espresso",
+      "category_id": "cat_coffee",
+      "name": "Espresso",
+      "description": "Single atau double shot espresso murni dengan crema tebal",
+      "image": "https://images.unsplash.com/photo-1510707513156-4b8faf6c78f4?w=400&auto=format&fit=crop&q=60",
+      "base_price": 18000,
+      "cost_price": 7000,
+      "stock": 100,
+      "minimum_stock": 10,
+      "is_active": true,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "prod_americano",
+      "category_id": "cat_coffee",
+      "name": "Americano",
+      "description": "Espresso premium dengan tambahan air panas, disajikan hot atau ice",
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&auto=format&fit=crop&q=60",
+      "base_price": 22000,
+      "cost_price": 8000,
+      "stock": 150,
+      "minimum_stock": 15,
+      "is_active": true,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "prod_cappuccino",
+      "category_id": "cat_coffee",
+      "name": "Cappuccino",
+      "description": "Kombinasi merata espresso, steamed milk, dan foam susu tebal",
+      "image": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&auto=format&fit=crop&q=60",
+      "base_price": 28000,
+      "cost_price": 11000,
+      "stock": 80,
+      "minimum_stock": 12,
+      "is_active": true,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "prod_latte",
+      "category_id": "cat_coffee",
+      "name": "Cafe Latte",
+      "description": "Steamed milk lembut dipadu espresso kaya rasa dengan late art cantik",
+      "image": "https://images.unsplash.com/photo-1534778101976-62847782c213?w=400&auto=format&fit=crop&q=60",
+      "base_price": 28000,
+      "cost_price": 11000,
+      "stock": 90,
+      "minimum_stock": 12,
+      "is_active": true,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "prod_caramel_latte",
+      "category_id": "cat_coffee",
+      "name": "Caramel Latte",
+      "description": "Latte klasik dengan sirup caramel manis organik dan saus caramel di atasnya",
+      "image": "https://images.unsplash.com/photo-1595781572981-d63151b232ed?w=400&auto=format&fit=crop&q=60",
+      "base_price": 32000,
+      "cost_price": 13000,
+      "stock": 70,
+      "minimum_stock": 10,
+      "is_active": true,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "prod_vanilla_latte",
+      "category_id": "cat_coffee",
+      "name": "Vanilla Latte",
+      "description": "Paduan lembut sirup vanilla madu Perancis, espresso, dan susu segar",
+      "image": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=400&auto=format&fit=crop&q=60",
+      "base_price": 32000,
+      "cost_price": 13000,
+      "stock": 70,
+      "minimum_stock": 10,
+      "is_active": true,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "prod_kopi_susu",
+      "category_id": "cat_coffee",
+      "name": "Kopi Susu Ya Kopi",
+      "description": "Signature kopi susu dengan gula aren murni khas Ya Kopi, rasa kental, gurih dan legit",
+      "image": "https://images.unsplash.com/photo-1461023210298-09cb960954fd?w=400&auto=format&fit=crop&q=60",
+      "base_price": 24000,
+      "cost_price": 9500,
+      "stock": 200,
+      "minimum_stock": 20,
+      "is_active": true,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "prod_matcha_latte",
+      "category_id": "cat_noncoffee",
+      "name": "Matcha Latte",
+      "description": "Bubuk Green Tea Uji Jepang premium dengan steamed milk segar manis seimbang",
+      "image": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=400&auto=format&fit=crop&q=60",
+      "base_price": 26000,
+      "cost_price": 11000,
+      "stock": 100,
+      "minimum_stock": 15,
+      "is_active": true,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "prod_chocolate",
+      "category_id": "cat_noncoffee",
+      "name": "Chocolate",
+      "description": "Cokelat Belgian Premium pekat gurih bertekstur creamy disukai segala kalangan",
+      "image": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&auto=format&fit=crop&q=60",
+      "base_price": 25000,
+      "cost_price": 10000,
+      "stock": 100,
+      "minimum_stock": 15,
+      "is_active": true,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "prod_lemon_tea",
+      "category_id": "cat_tea",
+      "name": "Lemon Tea",
+      "description": "Teh hitam pilihan diseduh dengan jus lemon segar penambah semangat",
+      "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&auto=format&fit=crop&q=60",
+      "base_price": 20000,
+      "cost_price": 7000,
+      "stock": 120,
+      "minimum_stock": 10,
+      "is_active": true,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "prod_croissant",
+      "category_id": "cat_snack",
+      "name": "Croissant Butter",
+      "description": "Croissant renyah berlapis mentega panggang wangi aromatik khas Perancis",
+      "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&auto=format&fit=crop&q=60",
+      "base_price": 22000,
+      "cost_price": 10000,
+      "stock": 30,
+      "minimum_stock": 5,
+      "is_active": true,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "prod_brownies",
+      "category_id": "cat_snack",
+      "name": "Fudgy Brownies",
+      "description": "Brownies cokelat dengan tekstur padat fudgy dan crust garing di luar",
+      "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&auto=format&fit=crop&q=60",
+      "base_price": 18000,
+      "cost_price": 8000,
+      "stock": 35,
+      "minimum_stock": 5,
+      "is_active": true,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "prod_cookies",
+      "category_id": "cat_snack",
+      "name": "Choco Chips Cookies",
+      "description": "Kue kering panggang dengan serpihan cokelat premium berlimpah bertekstur renyah lembut",
+      "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&auto=format&fit=crop&q=60",
+      "base_price": 15000,
+      "cost_price": 6000,
+      "stock": 40,
+      "minimum_stock": 5,
+      "is_active": true,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    }
+  ],
+  "product_variants": [
+    {
+      "id": "v_sz_sm",
+      "product_id": "prod_americano",
+      "variant_type": "Size",
+      "variant_name": "Small",
+      "additional_price": 0,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_sz_md",
+      "product_id": "prod_americano",
+      "variant_type": "Size",
+      "variant_name": "Medium",
+      "additional_price": 3000,
+      "sku": "SKU-AMER-MD",
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_sz_lg",
+      "product_id": "prod_americano",
+      "variant_type": "Size",
+      "variant_name": "Large",
+      "additional_price": 5000,
+      "sku": "SKU-AMER-LG",
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_sz_lat_sm",
+      "product_id": "prod_latte",
+      "variant_type": "Size",
+      "variant_name": "Small",
+      "additional_price": 0,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_sz_lat_md",
+      "product_id": "prod_latte",
+      "variant_type": "Size",
+      "variant_name": "Medium",
+      "additional_price": 3000,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_sz_lat_lg",
+      "product_id": "prod_latte",
+      "variant_type": "Size",
+      "variant_name": "Large",
+      "additional_price": 5000,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_sz_ks_sm",
+      "product_id": "prod_kopi_susu",
+      "variant_type": "Size",
+      "variant_name": "Small",
+      "additional_price": 0,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_sz_ks_md",
+      "product_id": "prod_kopi_susu",
+      "variant_type": "Size",
+      "variant_name": "Medium",
+      "additional_price": 3000,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_sz_ks_lg",
+      "product_id": "prod_kopi_susu",
+      "variant_type": "Size",
+      "variant_name": "Large",
+      "additional_price": 5000,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_tp_h",
+      "product_id": "prod_americano",
+      "variant_type": "Temperature",
+      "variant_name": "Hot",
+      "additional_price": 0,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_tp_i",
+      "product_id": "prod_americano",
+      "variant_type": "Temperature",
+      "variant_name": "Ice",
+      "additional_price": 1000,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_tp_lat_h",
+      "product_id": "prod_latte",
+      "variant_type": "Temperature",
+      "variant_name": "Hot",
+      "additional_price": 0,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_tp_lat_i",
+      "product_id": "prod_latte",
+      "variant_type": "Temperature",
+      "variant_name": "Ice",
+      "additional_price": 1000,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_tp_ks_h",
+      "product_id": "prod_kopi_susu",
+      "variant_type": "Temperature",
+      "variant_name": "Hot",
+      "additional_price": 0,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_tp_ks_i",
+      "product_id": "prod_kopi_susu",
+      "variant_type": "Temperature",
+      "variant_name": "Ice",
+      "additional_price": 1000,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_mk_fm",
+      "product_id": "prod_latte",
+      "variant_type": "Milk",
+      "variant_name": "Fresh Milk",
+      "additional_price": 0,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_mk_om",
+      "product_id": "prod_latte",
+      "variant_type": "Milk",
+      "variant_name": "Oat Milk",
+      "additional_price": 6000,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_mk_am",
+      "product_id": "prod_latte",
+      "variant_type": "Milk",
+      "variant_name": "Almond Milk",
+      "additional_price": 8000,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_sg_n",
+      "product_id": "prod_kopi_susu",
+      "variant_type": "Sugar",
+      "variant_name": "Normal Sugar",
+      "additional_price": 0,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_sg_l",
+      "product_id": "prod_kopi_susu",
+      "variant_type": "Sugar",
+      "variant_name": "Less Sugar",
+      "additional_price": 0,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "v_sg_ns",
+      "product_id": "prod_kopi_susu",
+      "variant_type": "Sugar",
+      "variant_name": "No Sugar",
+      "additional_price": 0,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    }
+  ],
+  "customers": [
+    {
+      "id": "cust_budi",
+      "name": "Budi Santoso",
+      "phone": "081234567890",
+      "email": "budi@gmail.com",
+      "birth_date": "2001-08-12",
+      "gender": "Laki-laki",
+      "member_status": "member",
+      "notes": "Suka americano ekstra ice, kurangi gula",
+      "created_at": "2026-05-06T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "cust_citra",
+      "name": "Citra Kirana",
+      "phone": "087788990011",
+      "email": "citra.k@yahoo.com",
+      "birth_date": "2002-11-23",
+      "gender": "Perempuan",
+      "member_status": "member",
+      "notes": "Langganan Cafe Latte dengan Oat Milk",
+      "created_at": "2026-05-21T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "cust_doni",
+      "name": "Doni Pratama",
+      "phone": "089912345678",
+      "email": "doni.pratama@gmail.com",
+      "birth_date": "2000-05-15",
+      "gender": "Laki-laki",
+      "member_status": "non-member",
+      "notes": "Customer baru",
+      "created_at": "2026-06-03T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    }
+  ],
+  "discounts": [
+    {
+      "id": "disc_grand",
+      "name": "Promo Grand Opening 15%",
+      "code": "YAKOPI15",
+      "type": "percentage",
+      "value": 15,
+      "start_date": "2026-01-01",
+      "end_date": "2026-12-31",
+      "is_active": true,
+      "is_member_only": false,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    },
+    {
+      "id": "disc_member",
+      "name": "Member Exclusive Diskon Berlipat Rp10rb",
+      "code": "MEMBERSAVE",
+      "type": "fixed",
+      "value": 10000,
+      "start_date": "2026-01-01",
+      "end_date": "2026-12-31",
+      "is_active": true,
+      "is_member_only": true,
+      "created_at": "2026-06-05T10:38:50.938Z",
+      "updated_at": "2026-06-05T10:38:50.938Z"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "tx_seed_1",
+      "transaction_number": "YKP-20260601-001",
+      "cashier_id": "usr_cashier",
+      "cashier_name": "Cashier Ya Kopi",
+      "customer_id": "cust_budi",
+      "customer_name": "Budi Santoso",
+      "subtotal": 44000,
+      "discount_id": "disc_grand",
+      "discount_amount": 6600,
+      "tax_amount": 3740,
+      "service_charge": 2000,
+      "grand_total": 36540,
+      "payment_method": "QRIS",
+      "paid_amount": 43140,
+      "change_amount": 0,
+      "transaction_date": "2026-06-01T10:30:00Z",
+      "created_at": "2026-06-01T10:30:00Z",
+      "updated_at": "2026-06-01T10:30:00Z"
+    },
+    {
+      "id": "tx_seed_2",
+      "transaction_number": "YKP-20260602-001",
+      "cashier_id": "usr_cashier",
+      "cashier_name": "Cashier Ya Kopi",
+      "customer_id": "cust_citra",
+      "customer_name": "Citra Kirana",
+      "subtotal": 56000,
+      "discount_id": "disc_member",
+      "discount_amount": 10000,
+      "tax_amount": 4600,
+      "service_charge": 2000,
+      "grand_total": 42600,
+      "payment_method": "Debit Card",
+      "paid_amount": 42600,
+      "change_amount": 0,
+      "transaction_date": "2026-06-02T13:15:00Z",
+      "created_at": "2026-06-02T13:15:00Z",
+      "updated_at": "2026-06-02T13:15:00Z"
+    },
+    {
+      "id": "tx_seed_3",
+      "transaction_number": "YKP-20260603-001",
+      "cashier_id": "usr_cashier",
+      "cashier_name": "Cashier Ya Kopi",
+      "customer_id": null,
+      "subtotal": 42000,
+      "discount_id": null,
+      "discount_amount": 0,
+      "tax_amount": 4200,
+      "service_charge": 2000,
+      "grand_total": 48200,
+      "payment_method": "Cash",
+      "paid_amount": 50000,
+      "change_amount": 1800,
+      "transaction_date": "2026-06-03T15:45:00Z",
+      "created_at": "2026-06-03T15:45:00Z",
+      "updated_at": "2026-06-03T15:45:00Z"
+    },
+    {
+      "id": "tx_seed_4",
+      "transaction_number": "YKP-20260604-001",
+      "cashier_id": "usr_owner",
+      "cashier_name": "Owner Ya Kopi",
+      "customer_id": "cust_budi",
+      "customer_name": "Budi Santoso",
+      "subtotal": 62000,
+      "discount_id": null,
+      "discount_amount": 0,
+      "tax_amount": 6200,
+      "service_charge": 2000,
+      "grand_total": 70200,
+      "payment_method": "E-Wallet",
+      "paid_amount": 70200,
+      "change_amount": 0,
+      "transaction_date": "2026-06-04T09:10:00Z",
+      "created_at": "2026-06-04T09:10:00Z",
+      "updated_at": "2026-06-04T09:10:00Z"
+    }
+  ],
+  "transaction_items": [
+    {
+      "id": "txi_seed_1",
+      "transaction_id": "tx_seed_1",
+      "product_id": "prod_americano",
+      "product_name": "Americano",
+      "variant_detail": "Size: Small, Temperature: Ice",
+      "quantity": 2,
+      "price": 23000,
+      "cost_price": 8000,
+      "subtotal": 46000,
+      "created_at": "2026-06-01T10:30:00Z",
+      "updated_at": "2026-06-01T10:30:00Z"
+    },
+    {
+      "id": "txi_seed_2",
+      "transaction_id": "tx_seed_2",
+      "product_id": "prod_latte",
+      "product_name": "Cafe Latte",
+      "variant_detail": "Size: Medium, Temperature: Hot, Milk: Oat Milk",
+      "quantity": 1,
+      "price": 37000,
+      "cost_price": 11000,
+      "subtotal": 37000,
+      "created_at": "2026-06-02T13:15:00Z",
+      "updated_at": "2026-06-02T13:15:00Z"
+    },
+    {
+      "id": "txi_seed_3",
+      "transaction_id": "tx_seed_2",
+      "product_id": "prod_brownies",
+      "product_name": "Fudgy Brownies",
+      "variant_detail": "",
+      "quantity": 1,
+      "price": 18000,
+      "cost_price": 8000,
+      "subtotal": 18000,
+      "created_at": "2026-06-02T13:15:00Z",
+      "updated_at": "2026-06-02T13:15:00Z"
+    },
+    {
+      "id": "txi_seed_4",
+      "transaction_id": "tx_seed_3",
+      "product_id": "prod_kopi_susu",
+      "product_name": "Kopi Susu Ya Kopi",
+      "variant_detail": "Size: Small, Temperature: Ice, Sugar: Normal Sugar",
+      "quantity": 1,
+      "price": 25000,
+      "cost_price": 9500,
+      "subtotal": 25000,
+      "created_at": "2026-06-03T15:45:00Z",
+      "updated_at": "2026-06-03T15:45:00Z"
+    },
+    {
+      "id": "txi_seed_5",
+      "transaction_id": "tx_seed_3",
+      "product_id": "prod_cookies",
+      "product_name": "Choco Chips Cookies",
+      "variant_detail": "",
+      "quantity": 1,
+      "price": 15000,
+      "cost_price": 6000,
+      "subtotal": 15000,
+      "created_at": "2026-06-03T15:45:00Z",
+      "updated_at": "2026-06-03T15:45:00Z"
+    },
+    {
+      "id": "txi_seed_6",
+      "transaction_id": "tx_seed_4",
+      "product_id": "prod_caramel_latte",
+      "product_name": "Caramel Latte",
+      "variant_detail": "Size: Large, Temperature: Ice",
+      "quantity": 1,
+      "price": 38000,
+      "cost_price": 13000,
+      "subtotal": 38000,
+      "created_at": "2026-06-04T09:10:00Z",
+      "updated_at": "2026-06-04T09:10:00Z"
+    },
+    {
+      "id": "txi_seed_7",
+      "transaction_id": "tx_seed_4",
+      "product_id": "prod_croissant",
+      "product_name": "Croissant Butter",
+      "variant_detail": "",
+      "quantity": 1,
+      "price": 22000,
+      "cost_price": 10000,
+      "subtotal": 22000,
+      "created_at": "2026-06-04T09:10:00Z",
+      "updated_at": "2026-06-04T09:10:00Z"
+    }
+  ],
+  "inventory_logs": [
+    {
+      "id": "invl_1",
+      "product_id": "prod_espresso",
+      "product_name": "Espresso",
+      "user_id": "usr_owner",
+      "user_name": "Owner Ya Kopi",
+      "type": "restock",
+      "quantity_before": 0,
+      "quantity_change": 100,
+      "quantity_after": 100,
+      "notes": "Initial stock setup via owner",
+      "created_at": "2026-05-06T10:38:50.938Z"
+    },
+    {
+      "id": "invl_2",
+      "product_id": "prod_americano",
+      "product_name": "Americano",
+      "user_id": "usr_owner",
+      "user_name": "Owner Ya Kopi",
+      "type": "restock",
+      "quantity_before": 0,
+      "quantity_change": 152,
+      "quantity_after": 152,
+      "notes": "Initial stock setup via owner",
+      "created_at": "2026-05-06T10:38:50.938Z"
+    },
+    {
+      "id": "invl_3",
+      "product_id": "prod_americano",
+      "product_name": "Americano",
+      "user_id": "usr_cashier",
+      "user_name": "Cashier Ya Kopi",
+      "type": "sale",
+      "quantity_before": 152,
+      "quantity_change": -2,
+      "quantity_after": 150,
+      "notes": "Order reduction for tx YKP-20260601-001",
+      "created_at": "2026-06-01T10:30:00Z"
+    }
+  ],
+  "activity_logs": [
+    {
+      "id": "actl_xkx18rmsr",
+      "user_id": "usr_cashier",
+      "user_name": "Cashier Ya Kopi",
+      "action": "LOGIN",
+      "description": "User Cashier Ya Kopi berhasil melakukan login via POS.",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+      "created_at": "2026-06-05T10:39:17.694Z"
+    },
+    {
+      "id": "actl_ug5xz4jd2",
+      "user_id": "usr_owner",
+      "user_name": "Owner Ya Kopi",
+      "action": "LOGIN",
+      "description": "User Owner Ya Kopi berhasil melakukan login via POS.",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.123.0 Chrome/148.0.7778.97 Electron/42.2.0 Safari/537.36",
+      "created_at": "2026-06-05T10:38:58.061Z"
+    },
+    {
+      "id": "actl_1",
+      "user_id": "usr_owner",
+      "user_name": "Owner Ya Kopi",
+      "action": "LOGIN",
+      "description": "Owner successfully logged in",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 System",
+      "created_at": "2026-06-05T10:38:50.938Z"
+    }
+  ]
+}

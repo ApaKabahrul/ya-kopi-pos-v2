@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-espresso: #1E130C;
+  --color-coffee: #3B2416;
+  --color-latte: #F3E5D0;
+  --color-milk: #FFFDF8;
+  --color-caramel: #C89F6A;
+  --color-darkroast: #1E130C;
+  --color-beige: #E8D8C3;
+}
+
+body {
+  background-color: var(--color-milk);
+  color: var(--color-darkroast);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+/* Enforce flat architecture universally for Clean Minimalism */
+*, *::before, *::after {
+  border-radius: 0px !important;
+  box-shadow: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+input, select, textarea, button {
+  border-radius: 0px !important;
+}
+
+/* Custom crisp solid design guidelines */
+.crisp-border {
+  border: 1px solid var(--color-darkroast);
+}
+
+.crisp-border-thick {
+  border: 2px solid var(--color-darkroast);
+}
+
+.mono-text {
+  font-family: var(--font-mono);
+}
+
+/* Custom print layout for pos receipt output */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-receipt-section, .print-receipt-section * {
+    visibility: visible;
+  }
+  .print-receipt-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm;
+    background: white;
+    color: black;
+    padding: 0;
+    margin: 0;
+  }
+  /* Hide print buttons */
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Custom modern minimalist scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #C89F6A;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6F4E37;
+}
+

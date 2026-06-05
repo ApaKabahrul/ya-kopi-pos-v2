@@ -1,0 +1,6 @@
+{
+  "name": "Ya Kopi POS",
+  "description": "Point of Sales (POS) system for Ya Kopi coffee shop, featuring transaction, inventory, customer CRM, discount, and employee management in Swiss Style design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
