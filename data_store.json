@@ -722,6 +722,26 @@
   ],
   "activity_logs": [
     {
+      "id": "actl_dykn5m4b3",
+      "user_id": "usr_owner",
+      "user_name": "Owner Ya Kopi",
+      "action": "LOGIN",
+      "description": "User Owner Ya Kopi berhasil melakukan login via POS.",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.8457",
+      "created_at": "2026-06-05T12:33:11.696Z"
+    },
+    {
+      "id": "actl_tczsdh40o",
+      "user_id": "usr_owner",
+      "user_name": "Owner Ya Kopi",
+      "action": "LOGIN",
+      "description": "User Owner Ya Kopi berhasil melakukan login via POS.",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.8457",
+      "created_at": "2026-06-05T12:27:51.465Z"
+    },
+    {
       "id": "actl_xkx18rmsr",
       "user_id": "usr_cashier",
       "user_name": "Cashier Ya Kopi",

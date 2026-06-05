@@ -28,6 +28,18 @@ const sessions: Record<string, ActiveSession> = {
 const app = express();
 const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
+// CORS headers - allow requests from any origin
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Content-Type', 'application/json');
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+  next();
+});
+
 // JSON parsing and size adjustments
 app.use(express.json({ limit: '10mb' }));
 
@@ -894,6 +906,20 @@ async function setupDevAndListen() {
     console.log(`[Ya Kopi POS Config Setup Success] Server is running on http://localhost:${PORT}`);
   });
 }
+
+// Global error handler - catch any unhandled errors and return JSON
+app.use((err: any, req: any, res: any, next: any) => {
+  console.error('[Ya Kopi API Error]', err);
+  res.status(500).json({
+    error: 'Server backend mengalami kesalahan. Silakan coba beberapa saat lagi.',
+    details: process.env.NODE_ENV === 'development' ? err.message : undefined
+  });
+});
+
+// Catch-all 404 handler
+app.use((req: any, res: any) => {
+  res.status(404).json({ error: 'Endpoint tidak ditemukan.' });
+});
 
 // Local dev: start with Vite middleware + listen
 // Vercel production: only export app (no listen)
