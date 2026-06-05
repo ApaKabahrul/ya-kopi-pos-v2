@@ -867,14 +867,14 @@ app.use(express.json({ limit: '10mb' }));
 
   // --- VITE DEV MIDDLEWARE AND STATIC SERVING CONFIGURATION ---
 
-const distPath = path.join(process.cwd(), 'dist');
 const isProduction = process.env.NODE_ENV === 'production';
 const isVercel = process.env.VERCEL === '1';
 
-if (isProduction || isVercel) {
-  // Production / Vercel: serve static files from dist/
+// On Vercel, static files & SPA fallback are handled by vercel.json rewrites + CDN.
+// Only serve static files in non-Vercel production (e.g., standalone Node hosting).
+if (isProduction && !isVercel) {
+  const distPath = path.join(process.cwd(), 'dist');
   app.use(express.static(distPath));
-  // SPA fallback: all non-API routes → index.html
   app.get('*', (req, res, next) => {
     if (req.path.startsWith('/api/')) return next();
     res.sendFile(path.join(distPath, 'index.html'));
