@@ -11,7 +11,9 @@ import {
   Discount, Transaction, TransactionItem, InventoryLog, ActivityLog 
 } from './types';
 
-const STORE_FILE = path.join(process.cwd(), 'data_store.json');
+// Vercel's filesystem is read-only except /tmp
+const dataDir = process.env.VERCEL === '1' ? '/tmp' : process.cwd();
+const STORE_FILE = path.join(dataDir, 'data_store.json');
 
 // Interface representing the entire relational schema inside JSON
 interface DataSchema {

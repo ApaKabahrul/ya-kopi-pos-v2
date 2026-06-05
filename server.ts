@@ -5,7 +5,6 @@
 
 import express from 'express';
 import path from 'path';
-import { createServer as createViteServer } from 'vite';
 import { db, hashPassword } from './src/server_db';
 import { User, TransactionItem, InventoryLogType } from './src/types';
 
@@ -26,12 +25,11 @@ const sessions: Record<string, ActiveSession> = {
   }
 };
 
-async function startServer() {
-  const app = express();
-  const PORT = 3000;
+const app = express();
+const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
-  // JSON parsing and size adjustments
-  app.use(express.json({ limit: '10mb' }));
+// JSON parsing and size adjustments
+app.use(express.json({ limit: '10mb' }));
 
   // Helper middleware to extract and validate session user
   function getSessionUser(req: any): User | null {
@@ -869,25 +867,40 @@ async function startServer() {
 
   // --- VITE DEV MIDDLEWARE AND STATIC SERVING CONFIGURATION ---
 
-  if (process.env.NODE_ENV !== 'production') {
-    const vite = await createViteServer({
-      server: { middlewareMode: true },
-      appType: 'spa',
-    });
-    app.use(vite.middlewares);
-  } else {
-    const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
-    });
-  }
+const distPath = path.join(process.cwd(), 'dist');
+const isProduction = process.env.NODE_ENV === 'production';
+const isVercel = process.env.VERCEL === '1';
+
+if (isProduction || isVercel) {
+  // Production / Vercel: serve static files from dist/
+  app.use(express.static(distPath));
+  // SPA fallback: all non-API routes → index.html
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api/')) return next();
+    res.sendFile(path.join(distPath, 'index.html'));
+  });
+}
+
+async function setupDevAndListen() {
+  // Dev mode: dynamically import Vite (not needed in production/Vercel)
+  const { createServer: createViteServer } = await import('vite');
+  const vite = await createViteServer({
+    server: { middlewareMode: true },
+    appType: 'spa',
+  });
+  app.use(vite.middlewares);
 
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`[Ya Kopi POS Config Setup Success] Server is running on http://localhost:${PORT}`);
   });
 }
 
-startServer().catch(err => {
-  console.error('[Ya Kopi Startup Failed]', err);
-});
+// Local dev: start with Vite middleware + listen
+// Vercel production: only export app (no listen)
+if (!isProduction && !isVercel) {
+  setupDevAndListen().catch(err => {
+    console.error('[Ya Kopi Startup Failed]', err);
+  });
+}
+
+export default app;
